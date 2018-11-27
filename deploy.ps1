@@ -19,7 +19,7 @@ if ($RunTidy -gt 0) {
   Get-ChildItem "*.*" -Depth 10 -Filter *.html |
   Foreach-Object {
     if (!$_.FullName.Contains("slide")) {
-      & ..\$RepoName-site\tidy.exe --write-back yes --force-output yes --quiet yes --tidy-mark no --output-html yes --indent yes --wrap 0 --drop-empty-elements no --drop-proprietary-attributes no --new-pre-tags section --vertical-space yes --fix-backslash no --lower-literals no --merge-divs no --merge-spans no --merge-emphasis no $_.FullName
+      & ..\..\$RepoName-site\tidy.exe --write-back yes --force-output yes --quiet yes --tidy-mark no --output-html yes --indent yes --wrap 0 --drop-empty-elements no --drop-proprietary-attributes no --new-pre-tags section --vertical-space yes --fix-backslash no --lower-literals no --merge-divs no --merge-spans no --merge-emphasis no $_.FullName
     }
   }
 }
