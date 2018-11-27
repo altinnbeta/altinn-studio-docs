@@ -1,4 +1,4 @@
-param([string]$GitToken = "", [string]$OrgName = "altinnbeta", [string]$RepoName = "altinn-studio-docs", [string], [string]$UserEmail = "", [string]$UserName = "", [int]$RunTidy = 0)
+param([string]$GitToken = "", [string]$OrgName = "altinnbeta", [string]$RepoName = "altinn-studio-docs", [string]$UserEmail = "", [string]$UserName = "", [int]$RunTidy = 0)
 
 cd ..
 git clone https://dev.azure.com/brreg/altinn-studio-docs/_git/$RepoName-site 
