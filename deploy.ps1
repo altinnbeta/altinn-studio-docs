@@ -31,7 +31,7 @@ cd gh-pages-$RepoName
 git config user.email $UserEmail
 git config user.name $UserName
 git add --all
-git commit -m "Publish"
+git commit -m "Publish to gh-pages"
 git push
 
 cd $PSScriptRoot
