@@ -1,0 +1,19 @@
+name: DORA Deployment Frequency
+
+on:
+  workflow_run:
+    workflows: ["Build and deploy"]
+    types: [completed]
+
+jobs:
+  on-successful-deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Calculate deployment frequency
+        uses: altinnbeta/deployment-frequency@main
+        with:
+          workflows: "Build and deploy"
+          default-branch: 'master'
+          number-of-days: 30
+          actions-token: ${{ secrets.GITHUB_TOKEN }}
