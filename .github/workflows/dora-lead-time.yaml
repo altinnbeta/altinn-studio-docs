@@ -1,0 +1,17 @@
+name: DORA Lead Time for Changes
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  calculate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Calculate lead time
+        uses: altinnbeta/lead-time-for-changes@main
+        with:
+          workflows: "Build and deploy"
+          default-branch: 'master'
+          number-of-days: 30
+          actions-token: ${{ secrets.GITHUB_TOKEN }}
